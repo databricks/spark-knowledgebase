@@ -1,6 +1,6 @@
 # Databricks Spark Knowledge Base
 
-The contents contained here is also published in [Gitbook format](http://vidaha.gitbooks.io/databricks-spark-knowledgebase/).
+The contents contained here is also published in [Gitbook format](http://databricks.gitbooks.io/databricks-spark-knowledge-base/).
 
 * [Best Practices](best_practices/README.md)
    * [Avoid GroupByKey](best_practices/prefer_reducebykey_over_groupbykey.md)
