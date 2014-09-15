@@ -23,7 +23,7 @@ Look at the diagram below to understand what happens with `reduceByKey`.  Notice
 ![ReduceByKey](../images/reduce_by.png)
 
 
-On the other hand, when calling `groupByKey` - all the key-value pairs are shuffled around.  This can result in an out of memory error.
+On the other hand, when calling `groupByKey` - all the key-value pairs are shuffled around. Furthermore, a key that contains a large amount of data will be forced to group within a single machine, and even if Spark spills all other keys to disk, a single key can cause out of memory exceptions if the data for that key is still too large for the memory allocated. This is something that may be addressed in the v1.2 release timeframe.
 
 ![GroupByKey](../images/group_by.png)
 
