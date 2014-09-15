@@ -23,7 +23,9 @@ Look at the diagram below to understand what happens with `reduceByKey`.  Notice
 ![ReduceByKey](../images/reduce_by.png)
 
 
-On the other hand, when calling `groupByKey` - all the key-value pairs are shuffled around. Furthermore, a key that contains a large amount of data will be forced to group within a single machine, and even if Spark spills all other keys to disk, a single key can cause out of memory exceptions if the data for that key is still too large for the memory allocated. This is something that may be addressed in the v1.2 release timeframe.
+On the other hand, when calling `groupByKey` - all the key-value pairs are shuffled around.  This is a lot of unnessary data to being transferred over the network.
+
+To determine which machine to shuffle a pair to, Spark calls a partitioning function on the key of the pair. Spark spills data to disk when there is more data shuffled onto a single executor machine than can fit in memory. However, it flushes out the data to disk one key at a time - so if a single key has more key-value pairs than can fit in memory, an out of memory exception occurs. This will be more gracefully handled in a later release of Spark so the job can still proceed, but should still be avoided - when Spark needs to spill to disk, performance is severely impacted.
 
 ![GroupByKey](../images/group_by.png)
 
