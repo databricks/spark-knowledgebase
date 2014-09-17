@@ -27,6 +27,7 @@ res1: Array[Int] = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 
 ```
 
 In Spark's application UI, you can see from the following screenshot that the "Total Tasks" represents the number of partitions:
+
 ![TotalTasks](../images/partitions-as-tasks.png)
 
 ## View Partition Caching Using the UI
@@ -41,5 +42,6 @@ res3: Array[Int] = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 
 ```
 
 Note from the screenshot that there are four partitions cached.
-![](../images/cached-partitions.png)
+
+![Cached Partitions](../images/cached-partitions.png)
 
