@@ -9,5 +9,6 @@ The contents contained here is also published in [Gitbook format](http://databri
    * [Job aborted due to stage failure: Task not serializable: ](troubleshooting/javaionotserializableexception.md)
    * [Missing Dependencies in Jar Files](troubleshooting/missing_dependencies_in_jar_files.md)
    * [Error running start-all.sh - Connection refused](troubleshooting/port_22_connection_refused.md)
+   * [How Many Partitions Does An RDD Have?](troubleshooting/how_many_partitions_does_an_rdd_have.md)
 * [Spark Streaming](spark_streaming/README.md)
    * [ERROR OneForOneStrategy](spark_streaming/error_oneforonestrategy.md)
