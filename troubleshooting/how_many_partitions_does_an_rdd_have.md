@@ -31,7 +31,7 @@ In Spark's application UI, you can see from the following screenshot that the "T
 ![TotalTasks](../images/partitions-as-tasks.png)
 
 ## View Partition Caching Using the UI
-When persisting (a.k.a. caching) RDDs, it's useful to understand how many partitions have made it in to the cache. The example below is identical to the prior example, except that we'll now cache the RDD prior to processing it. After this completes, we can use the UI to understand what has been stored from this operation.
+When persisting (a.k.a. caching) RDDs, it's useful to understand how many partitions have been stored. The example below is identical to the one prior, except that we'll now cache the RDD prior to processing it. After this completes, we can use the UI to understand what has been stored from this operation.
 
 ```scala
 scala> someRDD.setName("toy").cache
