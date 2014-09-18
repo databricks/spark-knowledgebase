@@ -33,7 +33,7 @@ Note from the screenshot that there are four partitions cached.
 ![Cached Partitions](../images/cached-partitions.png)
 
 ## Inspect RDD Partitions Programatically
-In the Scala API, an RDD holds a reference to it's Array of partitions, which you can use to find out how many partitions there are (copied from a spark-shell):
+In the Scala API, an RDD holds a reference to it's Array of partitions, which you can use to find out how many partitions there are:
 
 ```scala
 scala> val someRDD = sc.parallelize(1 to 100, 30)
@@ -43,7 +43,7 @@ scala> someRDD.partitions.size
 res0: Int = 30
 ```
 
-In the python API, there is a method for explicitly listing the number of partitions (copied from a pyspark shell using IPYTHON):
+In the python API, there is a method for explicitly listing the number of partitions:
 
 ```python
 In [1]: someRDD = sc.parallelize(range(101),30)
