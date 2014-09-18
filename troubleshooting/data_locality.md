@@ -1,6 +1,6 @@
 # Data Locality
 
-Spark is a data parallel processing framework, which means it will execute tasks as close to where the data lives as possible.
+Spark is a data parallel processing framework, which means it will execute tasks as close to where the data lives as possible (i.e. minimize data transfer).
 
 ## Checking Locality
 The best means of checking whether a task ran locally is to inspect a given stage in the Spark UI. Notice from the screenshot below that the "Locality Level" column displays which locality a given task ran with.
