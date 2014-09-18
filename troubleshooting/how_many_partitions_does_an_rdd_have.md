@@ -2,19 +2,6 @@
 
 For tuning and troubleshooting, it's often necessary to know how many paritions an RDD represents. There are a few ways to find this information:
 
-## Inspect RDD Partitions Programatically
-In the Scala API, an RDD holds a reference to it's Array of partitions, which you can use to find out how many partitions there are:
-
-```scala
-scala> val someRDD = sc.parallelize(1 to 100, 30)
-someRDD: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[0] at parallelize at <console>:12
-
-scala> someRDD.partitions.size
-res0: Int = 30
-```
-
-Note in the example above the number of partitions was intentionally set to 30 upon initialization.
-
 ## View Task Execution Against Partitions Using the UI
 When a stage executes, you can see the number of partitions for a given stage in the Spark UI. For example, the following simple job creates an RDD of 100 elements across 4 partitions, then distributes a dummy map task before collecting the elements back to the driver program:
 
@@ -45,3 +32,24 @@ Note from the screenshot that there are four partitions cached.
 
 ![Cached Partitions](../images/cached-partitions.png)
 
+## Inspect RDD Partitions Programatically
+In the Scala API, an RDD holds a reference to it's Array of partitions, which you can use to find out how many partitions there are (copied from a spark-shell):
+
+```scala
+scala> val someRDD = sc.parallelize(1 to 100, 30)
+someRDD: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[0] at parallelize at <console>:12
+
+scala> someRDD.partitions.size
+res0: Int = 30
+```
+
+In the python API, there is a method for explicitly listing the number of partitions (copied from a pyspark shell using IPYTHON):
+
+```python
+In [1]: someRDD = sc.parallelize(range(101),30)
+
+In [2]: someRDD.getNumPartitions()
+Out[2]: 30
+```
+
+Note in the examples above, the number of partitions was intentionally set to 30 upon initialization.
