@@ -8,6 +8,9 @@
    * [Job aborted due to stage failure: Task not serializable: ](troubleshooting/javaionotserializableexception.md)
    * [Missing Dependencies in Jar Files](troubleshooting/missing_dependencies_in_jar_files.md)
    * [Error running start-all.sh - Connection refused](troubleshooting/port_22_connection_refused.md)
+* [Performance & Optimization](performance_optimization/README.md)
+   * [How Many Partitions Does An RDD Have?](performance_optimization/how_many_partitions_does_an_rdd_have.md)
+   * [Data Locality](performance_optimization/data_locality.md)
 * [Spark Streaming](spark_streaming/README.md)
    * [ERROR OneForOneStrategy](spark_streaming/error_oneforonestrategy.md)
 
