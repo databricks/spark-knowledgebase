@@ -2,7 +2,7 @@
 
 By default, maven does not include dependency jars when it builds a target.  When running a Spark job, if the Spark worker machines don't contain the dependency jars - there will be an error that a class cannot be found.
 
-The easiest way to work around this is to create a *shaded* or *uber* jar to package the dependencies as well in the jar.  
+The easiest way to work around this is to create a *shaded* or *uber* jar to package the dependencies in the jar as well.  
 
 It is possible to opt out certain dependencies from being included in the uber jar by marking them as ```<scope>provided</scope>```.  Spark dependency jars should be marked as provided since they are already on the Spark cluster.  You may also mark other jars that you have already installed to your worker machines as provided.
 
