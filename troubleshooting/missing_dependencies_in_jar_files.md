@@ -1,12 +1,12 @@
 # Missing Dependencies in Jar Files
 
-By default, maven does not include dependency jars when it builds a target.  When running a Spark job, if the Spark worker machines don't contain the dependency jars - there will be an error.
+By default, maven does not include dependency jars when it builds a target.  When running a Spark job, if the Spark worker machines don't contain the dependency jars - there will be an error that a class cannot be found.
 
-The easiest way to work around this is to create a *shaded* or *uber* jar which will package the dependencies as well.  
+The easiest way to work around this is to create a *shaded* or *uber* jar to package the dependencies as well in the jar.  
 
-It is then possible to opt out certain dependencies from being included in the uber jar by marking them as ```<scope>provided</scope>```.  Spark dependency jars should be marked as provided since they are obviously already on the Spark cluster.
+It is possible to opt out certain dependencies from being included in the uber jar by marking them as ```<scope>provided</scope>```.  Spark dependency jars should be marked as provided since they are already on the Spark cluster.  You may also mark other jars that you have already installed to your worker machines as provided.
 
-Here is an example Maven pom.xml file that compile all the code in that project to the jar, and also include the common-cli jar, but not the Spark dependencies:
+Here is an example Maven pom.xml file that creates an uber jar will all the code in that project and includes the common-cli dependency, but not any of the Spark libraries.:
 
 ```xml
 <project>
