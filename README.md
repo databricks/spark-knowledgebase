@@ -15,3 +15,5 @@ The contents contained here is also published in [Gitbook format](http://databri
    * [Data Locality](performance_optimization/data_locality.md)
 * [Spark Streaming](spark_streaming/README.md)
    * [ERROR OneForOneStrategy](spark_streaming/error_oneforonestrategy.md)
+
+This content is covered by the license specified [here](LICENSE).
