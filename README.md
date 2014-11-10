@@ -5,6 +5,7 @@ The contents contained here is also published in [Gitbook format](http://databri
 * [Best Practices](best_practices/README.md)
    * [Avoid GroupByKey](best_practices/prefer_reducebykey_over_groupbykey.md)
    * [Don't copy all elements of a large RDD to the driver](best_practices/dont_call_collect_on_a_very_large_rdd.md)
+   * [Gracefully Dealing with Bad Input Data](best_practices/dealing_with_bad_data.md)
 * [General Troubleshooting](troubleshooting/README.md)
    * [Job aborted due to stage failure: Task not serializable: ](troubleshooting/javaionotserializableexception.md)
    * [Missing Dependencies in Jar Files](troubleshooting/missing_dependencies_in_jar_files.md)
