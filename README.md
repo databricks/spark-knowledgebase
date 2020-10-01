@@ -1,4 +1,5 @@
 # Databricks Spark Knowledge Base
+## useful for learning
 
 The contents contained here is also published in [Gitbook format](http://databricks.gitbooks.io/databricks-spark-knowledge-base/).
 
